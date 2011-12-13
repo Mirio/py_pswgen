@@ -44,19 +44,3 @@ def generate(width,cycles):
             for x in item:
                 outlist.append(x)
     return "".join(outlist)
-print "\nPy_pswgen = " + __version__
-print "\n" * 3
-try:
-    w = int(raw_input("Width?\n----> "))
-    c = int(raw_input("Cycles?\n----> "))
-except ValueError:
-    print "Wrong digits. Try again."
-    sys.exit(0)
-print "\n" * 2
-print "==== PASSWORD ====\n"
-try:
-    print genera(w,c)
-except ValueError:
-    print "Password Limit is 61. Try Again"
-    sys.exit(0)
-print "\n" * 2

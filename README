@@ -4,4 +4,16 @@ Password Generator
 2) Insert Cycles 
 3) Password generated!
 
+-----------------------------
+Py_pswgen_mod
+
+import py_pswgen_mod
+py_pswgen_module.generate(YOUR WIDTH, YOUR CYCLES)
+
+For Example:
+import py_pswgen_mod
+py_pswgen_mod.generate(10,10)
+
+-----------------------------
+
 Ps: Password max With is 61.
