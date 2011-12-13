@@ -22,11 +22,10 @@
 #   authors and should not be interpreted as representing official policies, either expressed   #
 #   or implied, of Mirio                                                                        # 
 
-
 import random
 import sys
 
-__version__ = "1.0"
+__version__ = "1.1"
 
 def generate(width,cycles):
     dictionary = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
@@ -34,29 +33,24 @@ def generate(width,cycles):
                 'z','A','B','C','D','E','F','G','H','I','J','K',
                 'L','M','N','O','P','Q','R','S','T','U','V','W',
                 'X','Y','Z','1','2','3','4','5','6','7','8','9']
-    x = 0
-    outlist = []
     outlist_tmp = []
-    while x < cycles:
-        x=x+1
+    for x in range(cycles):
         outlist_tmp.append(random.sample(dictionary, width))
-        for item in outlist_tmp:
-            for x in item:
-                outlist.append(x)
-    return "".join(outlist)
-print "\nPy_pswgen = " + __version__
-print "\n" * 3
+    outlist = random.choice(outlist_tmp)
+    return ''.join(outlist)
+print(("\nPy_pswgen = " + __version__))
+print(("\n" * 3))
 try:
-    w = int(raw_input("Width?\n----> "))
-    c = int(raw_input("Cycles?\n----> "))
+    w = int(input("Width?\n----> "))
+    c = int(input("Cycles?\n----> "))
 except ValueError:
-    print "Wrong digits. Try again."
+    print("Wrong digits. Try again.")
     sys.exit(0)
-print "\n" * 2
-print "==== PASSWORD ====\n"
+print(("\n" * 2))
+print("==== PASSWORD ====\n")
 try:
-    print genera(w,c)
+    print((generate(w,c)))
 except ValueError:
-    print "Password Limit is 61. Try Again"
+    print("Password Limit is 61. Try Again")
     sys.exit(0)
-print "\n" * 2
+print(("\n" * 2))

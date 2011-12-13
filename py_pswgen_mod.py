@@ -26,7 +26,7 @@
 import random
 import sys
 
-__version__ = "1.0"
+__version__ = "1.1"
 
 def generate(width,cycles):
     dictionary = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
@@ -34,13 +34,8 @@ def generate(width,cycles):
                 'z','A','B','C','D','E','F','G','H','I','J','K',
                 'L','M','N','O','P','Q','R','S','T','U','V','W',
                 'X','Y','Z','1','2','3','4','5','6','7','8','9']
-    x = 0
-    outlist = []
     outlist_tmp = []
-    while x < cycles:
-        x=x+1
+    for x in range(cycles):
         outlist_tmp.append(random.sample(dictionary, width))
-        for item in outlist_tmp:
-            for x in item:
-                outlist.append(x)
-    return "".join(outlist)
+    outlist = random.choice(outlist_tmp)
+    return ''.join(outlist)
